@@ -33,3 +33,51 @@
 	</div>
 </body>
 </html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>给大宝贝的长图生成器</title>
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript">
+	function rel() {
+	location.reload();
+	}
+	function hide() {
+	document.getElementById("canvas1").style.display="none";
+	}
+	function shot() {   
+	//document.getElementById("bg").style.display="";
+    html2canvas(document.querySelector("#bg"), { canvas: canvas1 }).then(canvas => {
+    document.body.appendChild(canvas)
+	});  
+	//document.getElementById("bg").style.display="none";
+}
+</script>
+</head>
+
+<body>
+	<div id="flot">
+	<div id="bg" style="width: 1080px;" >
+		<div id="textbg" style="width: 984px;";>
+			<div id="text" style="width: 900px;">
+				<p id="input"  contenteditable="true">
+
+					</p>
+			</div>
+		</div>
+	<div id="sign">
+		<p id="wu" style="text-align: center">WU SHANG WU</p>
+	</div>
+	</div>
+	<div id="click"><button class="button" onClick=shot()>❤点击生成截图(づ￣3￣)づ╭❤~</button>
+		<button class="button" id="rel" onClick=rel()>清空内容</button>
+	</div>
+	</div>
+	<div>
+		<canvas id="canvas1"></canvas>
+	</div>
+</body>
+</html>
